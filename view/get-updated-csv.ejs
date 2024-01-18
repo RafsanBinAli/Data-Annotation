@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Updated CSV File</title>
+</head>
+<body>
+    <h1>Show Updated CSV File</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Text</th>
+                <th>Label</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% updatedCsvFile.forEach((row) => { %>
+                <tr>
+                    <td><%= row.Text %></td>
+                    <td><%= row.Label %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <button id="downloadButton">Download CSV</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const downloadButton = document.getElementById('downloadButton');
+
+    downloadButton.addEventListener('click', () => {
+        console.log("button clicked");
+
+        // Make an AJAX request to fetch the JSON data
+        fetch('/get-updated-csv/') // Replace with the appropriate server endpoint
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                // Convert JSON data to CSV format
+                const csvData = data.map(row => Object.values(row).join(',')).join('\n');
+                const blob = new Blob([csvData], { type: 'text/csv' });
+
+                // Create a temporary download link
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'updated_data.csv';
+
+                // Programmatically trigger the download
+                a.click();
+
+                // Release the URL object
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => console.error(error));
+    });
+});
+
+    </script>
+    
+    
+    
+</body>
+</html>

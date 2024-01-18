@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (head content) ... -->
+    <style>
+        /* Add CSS for responsive table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Define styles for table header and data rows */
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Add CSS for responsive design */
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            th {
+                position: absolute;
+            }
+
+            /* Hide table headers (but keep the content) */
+            th[scope="col"] {
+                display: none;
+            }
+
+            /* Style each cell with appropriate border */
+            td:before {
+                content: attr(data-label);
+                display: inline-block;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Your work id is <%= fileData._id %></h1>
+    <p>Payment: <%= fileData.payment %> USD</p>
+    <p>File Type: <%= fileData.file_type %></p>
+    <h2>CSV File Data:</h2>
+    <form action="/show/<%= fileData._id %>" method="post" >
+      
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Text</th>
+                    <th scope="col">Label</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% let i=0 %>
+                <% for (let row of csvData) { %>
+                    <tr>
+                        <% i++; %>
+                        <td data-label="RAFSAN"><%= row.Text %></td>
+                        <td data-label="TAHIAT">
+                            <input type="text" name="labels[]" />
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    
+        <div class="button_position">
+            <button class="accept" type="submit">
+                Submit Labels
+            </button>
+        </div>
+    </form>
+    
+    
+</body>
+</html>

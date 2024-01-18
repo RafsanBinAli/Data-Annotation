@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/available-work.css">
+
+    <title>Complete Jobs</title>
+</head>
+    
+   
+
+<body>
+   
+        <div class="upor">
+            <% files.forEach((file) =>{ %>
+                <% if (file.completionStatus===true){  %>
+            <div class="card card-type">
+                
+                <h2 > <%= file.file_type %> Proceesing</h2>
+                <p> Payment : <%= file.payment %> <b>USD</b></p>
+                <div class ="button_position">
+
+                <a href="/upload/complete/<%= file.id %>">
+                    <button class="accept" id="accept" data-file-id="<%= file._id %>">
+                      Show
+                    </button>
+                </a>
+
+                </div>
+                <% } %>
+                
+            </div>
+            <% }) %>
+        </div>
+   
+</body>
+</html>

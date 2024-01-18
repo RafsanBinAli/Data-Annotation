@@ -1,0 +1,40 @@
+.accept {
+    background-color: #225c3c; /* Blue background color */
+    color: #fff; /* White text color */
+    border: 4px; /* No border */
+    padding: 10px 20px; /* Increase padding to change the button size */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 20px; /* Change font size to adjust the text size */
+    }
+
+    .accept:hover {
+    background-color: #1a62aa; /* Darker blue on hover */
+    }
+        .upor {
+            padding-left: 30rem;
+            padding-top: 20rem;
+        }
+        .card {
+            
+            margin-top: 20px;
+            
+            margin-right: 30px;
+            display: inline-block;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            background-color: #4d2323;
+            width: 300px;
+            height: 250px;
+            text-align: center;
+            
+        }
+
+        .card-type {
+            background-color: #c0c1c7;
+        }
+        .button_position{
+            padding-top: 45px;
+        }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/completeJobShow.css">
+
+    <title>Show Updated CSV File</title>
+</head>
+<body>
+    <h1>Show Updated CSV File</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Text</th>
+                <th>Label</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% const updatedCsvFile = JSON.parse(file.updated_csv_file); %>
+           
+            <% updatedCsvFile.forEach((row) => { %>
+                <tr>
+                    <td><%= row.Text %></td>
+                    <td><%= row.Label %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <button id="downloadButton">Download CSV</button>
+
+   
+    <script>
+        // Define a function to send the AJAX request
+function sendAjaxRequest(id) {
+    // Make an AJAX request using the fetch API
+    fetch('/api/get-updated-csv/' + id)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Assuming the server returns JSON data
+        })
+        .then(data => {
+            console.log("jjj");
+            const csvData = data.map(row => Object.values(row).join(',')).join('\n');
+                const blob = new Blob([csvData], { type: 'text/csv' });
+
+                // Create a temporary download link
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'updated_data.csv';
+
+                // Programmatically trigger the download
+                a.click();
+
+                // Release the URL object
+                window.URL.revokeObjectURL(url);
+            // Handle the response data here
+        })
+        .catch(error => {
+            console.error('Error: ' + error);
+        });
+}
+
+// Add an event listener to the download button
+document.addEventListener('DOMContentLoaded', function() {
+    var downloadButton = document.getElementById('downloadButton');
+    downloadButton.addEventListener('click', function() {
+        
+        // Get the id from the EJS template or any other source
+        var id = '<%= file._id %>'; // Assuming the ID is in the first row
+        console.log(id);
+
+        // Call the function to send the AJAX request
+        sendAjaxRequest(id);
+    });
+});
+
+    </script>
+
+    
+</body>
+</html>

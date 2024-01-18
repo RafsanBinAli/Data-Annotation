@@ -1,0 +1,122 @@
+.nav-bar{
+    height: 90px;
+    width: auto;
+    background-color: rgb(2, 75, 75);
+    position: relative;
+}
+
+.home{
+    height: 80px;
+    width: auto;
+    position: absolute;
+    justify-content: left;
+    display: inline-block;
+}
+.home-button{
+    height: 60px;
+    width: auto;
+    position: absolute;
+    justify-content: left;
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 700;
+    color: aliceblue;
+    left: 40px;
+    top: 10px;
+}
+
+/* main body*/
+
+.main-body{
+    height: 800px;
+    width: auto;
+    background-color: rgb(204, 197, 197);
+    position: relative;
+}
+.form-body{
+    position: absolute;
+    top: 6rem;
+    left: 30rem;
+    height: 600px;
+    width: 850px;
+    background-color: powderblue;
+    border: 2px solid rgb(0, 32, 32);
+}
+.left{
+    position: relative;
+    height: 100%;
+    width: 47%;
+    display: inline-block;
+    background-color: aliceblue;
+}
+.right{
+    position: absolute;
+    height: 100%;
+    width: 53%;
+    display: inline-block;
+    background-color: rgb(2, 75, 75);
+}
+.login-pic{
+    margin-left: 25px;
+    margin-top: 20px;
+    height: 90%;
+    width: 90%;
+    filter: opacity(90%);
+   
+}
+.form-heading{
+    margin-top: 40px;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+.login-form{
+   
+    width: 97%;
+    margin-left: 10px;
+    height: 370px;
+    background-color: rgb(2, 77, 70);
+}
+.login-form input{
+    width: 70%;
+    height: 60px;
+    margin-top: 35px;
+    margin-left: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    width: 50%;
+    margin-top: 30px;
+    margin-left: 70px;
+    padding: 12px;
+    background-color: #aeafae;
+    color: #fff;
+   
+    border-radius: 4px;
+    cursor: pointer;
+}
+.login-form button:hover {
+    background-color: #1d2c1e;
+}
+
+.new{
+    color: white;
+    text-align: center;
+    font-family:   'Roboto Mono', monospace;
+}
+.new .no-account{
+    font-size: 18px;
+    font-weight: 600;
+    
+
+    font-family: 'Roboto Mono', monospace;
+
+
+}
+.new .open{
+    color: #ebe70f;
+}

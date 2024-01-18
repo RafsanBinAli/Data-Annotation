@@ -1,0 +1,146 @@
+/*top*/
+
+
+.menu-bar{
+    position:absolute;
+    top: 25px;
+    left: 90rem;
+    height:80px;
+    width: 500px;
+    display: inline-block;
+}
+
+.home{
+    
+    padding-top: 10px;
+    
+    font-size: 30px;
+    font-weight: bolder;
+    color: #fff;
+    display: inline-block;
+    padding-right: 40px;
+}
+
+.About-us{
+    padding-top: 10px;
+    
+    font-size: 30px;
+    font-weight: bolder;
+    color: #fff;
+    display: inline-block;
+    padding-right: 40px;
+}
+
+.policies{
+    padding-top: 10px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #fff;
+}
+
+/*top shesh */
+
+
+
+.middle-class{
+    position: relative;
+    display: inline-block;
+}
+
+.heading{
+    
+    position: absolute;
+    top: 14rem;
+    left: 100px;
+    
+}
+.heading-h1 {
+    font-size: 60px;
+    color: rgb(201, 223, 4);
+    font-weight: bolder;
+    font-family: 'Roboto Mono', monospace;
+    height: 70px;
+    width: 800px;
+}
+.heading-h3 {
+    
+    font-size: 22px;
+    padding-top: 15px;
+    color: #c8e678;
+    font-weight: 200;
+    font-family: 'Roboto Mono', monospace;
+    height: 200px;
+    width: 900px;
+}
+
+    
+
+
+#bg{
+    position: relative;
+    
+    height: 700px;
+    width: 120rem;
+    display: inline-block;
+    filter:brightness(50%)
+}
+
+
+
+#middle{
+    background-color: rgb(177, 211, 201);
+    height: 1000px;
+    width: auto;
+}
+
+/*button */
+
+
+.sell-buy{
+    position: absolute;
+    top: 22rem;
+    left: 80rem;
+
+    height: 200px;
+    width: 400px;
+    display: flex;
+    gap: 10px;
+
+}
+
+.sell-buy .h2 {
+    padding-left: 10px;
+    margin-top: 4px;
+    font-size: 30px;
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    
+    color: #fdfafa;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.btn.p{
+    margin-top: 60px;
+    
+    height: 30%;
+    width: 220px;
+    background-color: #d6c312;
+    font-size: 30px;
+    color: #050505;
+    border: solid 2px #050505 ;
+    
+
+}
+.btn.w{
+    margin-top: 60px;
+    height: 30%;
+    width: 220px;
+    font-size: 30px;
+    font-weight: 500;
+    border: solid 2px #fdfafa ;
+}

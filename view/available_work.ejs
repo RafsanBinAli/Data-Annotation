@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Work</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="css/available-work.css">
+    <!-- <script src="../getID.js" type="text/javascript" > </script> -->
+</head>
+<body>
+   
+        <div class="upor">
+            <% for (let file of files) { %>
+            <div class="card card-type">
+                <h2 > <%= file.file_type %> Proceesing</h2>
+                <p> Payment : <%= file.payment %> <b>USD</b></p>
+                <div class ="button_position">
+                    <a href="/show/<%= file._id %>">
+                    <button class="accept" id="accept" data-file-id="<%= file._id %>">
+                      Accept
+                    </button>
+                </a>
+                </div>
+                
+            </div>
+            <% } %>
+        </div>
+   
+</body>
+</html>
