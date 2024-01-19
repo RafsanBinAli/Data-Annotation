@@ -19,9 +19,10 @@ mongoose.connect('mongodb+srv://octopus:Rafsan67@cluster0.rllrx4c.mongodb.net/?r
 })
 
 const routee = require("./routes/routef")
+const user =require("./routes/UserAuthentication")
 
 
-
+app.use(express.static(path.join(__dirname, 'public'), { 'extensions': ['html'] }));
 
 const upfolder= "./upload_file/";
 
@@ -255,6 +256,7 @@ app.post('/show/:fileid', async function (req, res) {
 });
 
 app.use('/api', routee);
+app.use('/user', user);
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
